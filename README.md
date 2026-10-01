@@ -1,4 +1,4 @@
-# SatSeq processing ode
+# SatSeq processing code
 
 This repository contains analysis code supporting the manuscript:
 
