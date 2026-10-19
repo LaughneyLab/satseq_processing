@@ -1,0 +1,43 @@
+"variant","group","residue"
+"M1","Only IFNa",1
+"I10","Only NFkB",10
+"Y20","Only NFkB",20
+"L33","Only UPR",33
+"W34","Only NFkB",34
+"K61","Only IFNa",61
+"E69","IFNa & NFkB",69
+"V73","IFNa & NFkB",73
+"C88","Only NFkB",88
+"T111","Only NFkB",111
+"T139","Only NFkB",139
+"E142","Only UPR",142
+"V143","Only UPR",143
+"V146","IFNa & NFkB",146
+"Y166","IFNa & NFkB",166
+"L167","Only UPR",167
+"L203","IFNa & NFkB & UPR",203
+"C205","Only NFkB",205
+"G233","IFNa & UPR",233
+"R237","IFNa & NFkB",237
+"Y239","Only UPR",239
+"N241","Only IFNa",241
+"E259","IFNa & NFkB & UPR",259
+"T266","Only IFNa",266
+"L267","Only NFkB",267
+"S279","Only NFkB",279
+"R280","Only UPR",280
+"A287","Only IFNa",287
+"L294","IFNa & NFkB & UPR",294
+"L298","IFNa & NFkB & UPR",298
+"L324","IFNa & NFkB",324
+"V328","Only UPR",328
+"L329","Only IFNa",329
+"I332","Only IFNa",332
+"L362","Only IFNa",362
+"I364","IFNa & UPR",364
+"S365","Only IFNa",365
+"M367","Only NFkB",367
+"Q369","Only IFNa",369
+"P370","IFNa & NFkB & UPR",370
+"L373","IFNa & NFkB & UPR",373
+"R374","Only IFNa",374
