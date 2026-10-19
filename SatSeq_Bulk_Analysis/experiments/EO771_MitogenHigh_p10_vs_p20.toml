@@ -1,0 +1,26 @@
+# EO771 MitogenHigh p10 vs p20 Experiment
+
+experiment_name = "EO771_MitogenHigh_p10_vs_p20"
+output_dir = "results/EO771_MitogenHigh_p10_vs_p20"
+
+barcodes_file = "assets/bcmap_EO771_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-AO-17123_2024_08_30"
+]
+
+reference_names = [
+    "EO771_p10_1_",
+    "EO771_p10_2_",
+    "EO771_p10_3_"
+]
+
+alt_names = [
+    "EO771_p20_1_",
+    "EO771_p20_2_",
+    "EO771_p20_3_"
+]
+
+dt = 10
+paired = true

@@ -1,0 +1,33 @@
+# 4T1 Ref Stop C147 K159 Initial vs Tail Vein Experiment
+
+experiment_name = "4T1_Ref_Stop_C147_K159_Initial_vs_Tail_Vein"
+output_dir = "results/4T1_Ref_Stop_C147_K159_Initial_vs_Tail_Vein"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-MD-16882_2024_07_29",
+    "/local/data/Laughney-MD-16882_2024_07_24"
+]
+
+reference_names = [
+    "Initial_Tail_Vein_Injection_REF_STOP_C147_K151"
+]
+
+alt_names = [
+    "T1_Tail_Vein_Injection_REF_STOP_C147_K151",
+    "T2_Tail_Vein_Injection_REF_STOP_C147_K152",
+    "T3_Tail_Vein_Injection_REF_STOP_C147_K153",
+    "T4_Tail_Vein_Injection_REF_STOP_C147_K154",
+    "T5_Tail_Vein_Injection_REF_STOP_C147_K155",
+    "T6_Tail_Vein_Injection_REF_STOP_C147_K156",
+    "T7_Tail_Vein_Injection_REF_STOP_C147_K157",
+    "T8_Tail_Vein_Injection_REF_STOP_C147_K158",
+    "T9_Tail_Vein_Injection_REF_STOP_C147_K159",
+    "T10_Tail_Vein_Injection_REF_STOP_C147_K160"
+]
+
+dt = 7
+paired = false
+make_plots = false

@@ -1,0 +1,24 @@
+# 4T1 Initial vs MitogenHigh p20 Experiment
+
+experiment_name = "4T1_Initial_vs_MitogenHigh_p20"
+output_dir = "results/4T1_Initial_vs_MitogenHigh_p20"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-AO-17123_2024_08_30"
+]
+
+reference_names = [
+    "4T1_p1_"
+]
+
+alt_names = [
+    "4T1_p20_1_",
+    "4T1_p20_2_",
+    "4T1_p20_3_"
+]
+
+dt = 20
+paired = false

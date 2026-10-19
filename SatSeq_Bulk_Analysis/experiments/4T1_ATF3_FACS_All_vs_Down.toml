@@ -1,0 +1,29 @@
+# 4T1 ATF3 FACS All vs Down Experiment
+
+experiment_name = "4T1_ATF3_FACS_All_vs_Down"
+output_dir = "results/4T1_ATF3_FACS_All_vs_Down"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-MD-20663_2026_03_19",
+    "/local/data/Laughney-AO-19434_2025_09_02"
+]
+
+reference_names = [
+    "ATF3_Total",
+    "ATF3_T1",
+    "ATF3_T2",
+    "ATF3_T3"
+]
+
+alt_names = [
+    "ATF3_Down",
+    "ATF3_R2_Dn",
+    "ATF3_R3_Dn"
+]
+
+dt = 1
+paired = false
+make_plots = false

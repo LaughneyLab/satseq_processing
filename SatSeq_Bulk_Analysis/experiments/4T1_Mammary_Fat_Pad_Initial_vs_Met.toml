@@ -1,0 +1,52 @@
+# 4T1 Mammary Fat Pad Initial vs Metastasis Experiment
+
+experiment_name = "4T1_Mammary_Fat_Pad_Initial_vs_Met"
+output_dir = "results/4T1_Mammary_Fat_Pad_Initial_vs_Met"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-MD-16882_2024_07_29",
+    "/local/data/Laughney-MD-16882_2024_07_24"
+]
+
+reference_names = [
+    "Initial_Mammory_Fat_Pad"
+]
+
+alt_names = [
+    "316_Mammory_Fat_Pad_Lung_Metastasis",
+    "317_Mammory_Fat_Pad_Lung_Metastasis",
+    "318_Mammory_Fat_Pad_Lung_Metastasis",
+    "319_Mammory_Fat_Pad_Lung_Metastasis",
+    "320_Mammory_Fat_Pad_Lung_Metastasis",
+    "321_Mammory_Fat_Pad_Lung_Metastasis",
+    "322_Mammory_Fat_Pad_Lung_Metastasis",
+    "323_Mammory_Fat_Pad_Lung_Metastasis",
+    "324_Mammory_Fat_Pad_Lung_Metastasis",
+    "325_Mammory_Fat_Pad_Lung_Metastasis",
+    "326_Mammory_Fat_Pad_Lung_Metastasis",
+    "327_Mammory_Fat_Pad_Lung_Metastasis",
+    "328_Mammory_Fat_Pad_Lung_Metastasis",
+    "329_Mammory_Fat_Pad_Lung_Metastasis",
+    "330_Mammory_Fat_Pad_Lung_Metastasis",
+    "331_Mammory_Fat_Pad_Lung_Metastasis",
+    "332_Mammory_Fat_Pad_Lung_Metastasis",
+    "333_Mammory_Fat_Pad_Lung_Metastasis",
+    "334_Mammory_Fat_Pad_Lung_Metastasis",
+    "335_Mammory_Fat_Pad_Lung_Metastasis",
+    "336_Mammory_Fat_Pad_Lung_Metastasis",
+    "337_Mammory_Fat_Pad_Lung_Metastasis",
+    "338_Mammory_Fat_Pad_Lung_Metastasis",
+    "339_Mammory_Fat_Pad_Lung_Metastasis",
+    "340_Mammory_Fat_Pad_Lung_Metastasis",
+    "341_Mammory_Fat_Pad_Lung_Metastasis",
+    "342_Mammory_Fat_Pad_Lung_Metastasis",
+    "343_Mammory_Fat_Pad_Lung_Metastasis",
+    "344_Mammory_Fat_Pad_Lung_Metastasis",
+    "345_Mammory_Fat_Pad_Lung_Metastasis"
+]
+
+dt = 19
+paired = false

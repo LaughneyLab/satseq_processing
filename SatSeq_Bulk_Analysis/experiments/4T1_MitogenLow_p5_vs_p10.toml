@@ -1,0 +1,26 @@
+# 4T1 MitogenLow p5 vs p10 Experiment
+
+experiment_name = "4T1_MitogenLow_p5_vs_p10"
+output_dir = "results/4T1_MitogenLow_p5_vs_p10"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-AO-17123_2024_08_30"
+]
+
+reference_names = [
+    "4T1_2FBS_p5_1_",
+    "4T1_2FBS_p5_2_",
+    "4T1_2FBS_p5_3_"
+]
+
+alt_names = [
+    "4T1_2FBS_p10_1_",
+    "4T1_2FBS_p10_2_",
+    "4T1_2FBS_p10_3_"
+]
+
+dt = 5
+paired = true

@@ -1,0 +1,51 @@
+# 4T1 Tail Vein vs Lung Metastasis Experiment
+
+experiment_name = "4T1_Tail_Vein_vs_Lung_Met"
+output_dir = "results/4T1_Tail_Vein_vs_Lung_Met"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-MD-16882_2024_07_29",
+    "/local/data/Laughney-MD-16882_2024_07_24"
+]
+
+reference_names = [
+    "Initial_Tail_Vein_Injection_A",
+    "initial_Tail_Vein_Injection_B"
+]
+
+alt_names = [
+    "1_Tail_Vein_Injection_Lung_Metastasis",
+    "2_Tail_Vein_Injection_Lung_Metastasis",
+    "3_Tail_Vein_Injection_Lung_Metastasis",
+    "4_Tail_Vein_Injection_Lung_Metastasis",
+    "5_Tail_Vein_Injection_Lung_Metastasis",
+    "6_Tail_Vein_Injection_Lung_Metastasis",
+    "7_Tail_Vein_Injection_Lung_Metastasis",
+    "8_Tail_Vein_Injection_Lung_Metastasis",
+    "9_Tail_Vein_Injection_Lung_Metastasis",
+    "10_Tail_Vein_Injection_Lung_Metastasis",
+    "11_Tail_Vein_Injection_Lung_Metastasis",
+    "12_Tail_Vein_Injection_Lung_Metastasis",
+    "13_Tail_Vein_Injection_Lung_Metastasis",
+    "14_Tail_Vein_Injection_Lung_Metastasis",
+    "15_Tail_Vein_Injection_Lung_Metastasis",
+    "16_Tail_Vein_Injection_Lung_Metastasis",
+    "17_Tail_Vein_Injection_Lung_Metastasis",
+    "18_Tail_Vein_Injection_Lung_Metastasis",
+    "19_Tail_Vein_Injection_Lung_Metastasis",
+    "20_Tail_Vein_Injection_Lung_Metastasis",
+    "21_Tail_Vein_Injection_Lung_Metastasis",
+    "22_Tail_Vein_Injection_Lung_Metastasis",
+    "23_Tail_Vein_Injection_Lung_Metastasis",
+    "24_Tail_Vein_Injection_Lung_Metastasis",
+    "25_Tail_Vein_Injection_Lung_Metastasis",
+    "26_Tail_Vein_Injection_Lung_Metastasis",
+    "27_Tail_Vein_Injection_Lung_Metastasis",
+    "28_Tail_Vein_Injection_Lung_Metastasis"
+]
+
+dt = 13
+paired = false

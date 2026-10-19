@@ -1,0 +1,36 @@
+# EO771.lmb Mammary Fat Pad Initial vs Primary Experiment
+
+experiment_name = "EO771_Mammary_Fat_Pad_Initial_vs_Primary"
+output_dir = "results/EO771_Mammary_Fat_Pad_Initial_vs_Primary"
+
+barcodes_file = "assets/bcmap_EO771_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-AO-16063_2024_03_22"
+]
+
+reference_names = [
+    "0A_505_706",
+    "0B_505_707"
+]
+
+alt_names = [
+    "1_506_706",
+    "2_506_707",
+    "3_506_709",
+    "4_506_711",
+    "5_506_712",
+    "6_507_706",
+    "7_507_707",
+    "8_507_709",
+    "9_507_711",
+    "10A_501_706",
+    "10B_501_707",
+    "10C_501_709",
+    "10D_501_711",
+    "10E_501_712"
+]
+
+dt = 7
+paired = false

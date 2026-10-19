@@ -1,0 +1,27 @@
+# 4T1 STING FACS All vs Up Experiment
+
+experiment_name = "4T1_STING_FACS_All_vs_Up"
+output_dir = "results/4T1_STING_FACS_All_vs_Up"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-AO-17694_2024_12_12"
+]
+
+reference_names = [
+    "Total_1",
+    "Total_2",
+    "Total_3"
+]
+
+alt_names = [
+    "Up_1",
+    "Up_2",
+    "Up_3"
+]
+
+dt = 1
+paired = true
+make_plots = false

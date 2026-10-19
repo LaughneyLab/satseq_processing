@@ -1,0 +1,27 @@
+# 4T1 NFkB FACS All vs Down Experiment
+
+experiment_name = "4T1_NFkB_FACS_All_vs_Down"
+output_dir = "results/4T1_NFkB_FACS_All_vs_Down"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-MD-20874_2026_04_15"
+]
+
+reference_names = [
+    "NFkB_T1",
+    "NFkB_T2",
+    "NFkB_T3"
+]
+
+alt_names = [
+    "NFkB_DN1",
+    "NFkB_DN2",
+    "NFkB_DN3"
+]
+
+dt = 1
+paired = false
+make_plots = false

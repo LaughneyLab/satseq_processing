@@ -1,0 +1,52 @@
+# 4T1 Mammary Fat Pad Initial vs Primary Tumor Experiment
+
+experiment_name = "4T1_Mammary_Fat_Pad_Initial_vs_Primary"
+output_dir = "results/4T1_Mammary_Fat_Pad_Initial_vs_Primary"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-MD-16882_2024_07_29",
+    "/local/data/Laughney-MD-16882_2024_07_24"
+]
+
+reference_names = [
+    "Initial_Mammory_Fat_Pad"
+]
+
+alt_names = [
+    "316_Mammory_Fat_Pad_Primary_Tumor",
+    "317_Mammory_Fat_Pad_Primary_Tumor",
+    "318_Mammory_Fat_Pad_Primary_Tumor",
+    "319_Mammory_Fat_Pad_Primary_Tumor",
+    "320_Mammory_Fat_Pad_Primary_Tumor",
+    "321_Mammory_Fat_Pad_Primary_Tumor",
+    "322_Mammory_Fat_Pad_Primary_Tumor",
+    "323_Mammory_Fat_Pad_Primary_Tumor",
+    "324_Mammory_Fat_Pad_Primary_Tumor",
+    "325_Mammory_Fat_Pad_Primary_Tumor",
+    "326_Mammory_Fat_Pad_Primary_Tumor",
+    "327_Mammory_Fat_Pad_Primary_Tumor",
+    "328_Mammory_Fat_Pad_Primary_Tumor",
+    "329_Mammory_Fat_Pad_Primary_Tumor",
+    "330_Mammory_Fat_Pad_Primary_Tumor",
+    "331_Mammory_Fat_Pad_Primary_Tumor",
+    "332_Mammory_Fat_Pad_Primary_Tumor",
+    "333_Mammory_Fat_Pad_Primary_Tumor",
+    "334_Mammory_Fat_Pad_Primary_Tumor",
+    "335_Mammory_Fat_Pad_Primary_Tumor",
+    "336_Mammory_Fat_Pad_Primary_Tumor",
+    "337_Mammory_Fat_Pad_Primary_Tumor",
+    "338_Mammory_Fat_Pad_Primary_Tumor",
+    "339_Mammory_Fat_Pad_Primary_Tumor",
+    "340_Mammory_Fat_Pad_Primary_Tumor",
+    "341_Mammory_Fat_Pad_Primary_Tumor",
+    "342_Mammory_Fat_Pad_Primary_Tumor",
+    "343_Mammory_Fat_Pad_Primary_Tumor",
+    "344_Mammory_Fat_Pad_Primary_Tumor",
+    "345_Mammory_Fat_Pad_Primary_Tumor"
+]
+
+dt = 7
+paired = false

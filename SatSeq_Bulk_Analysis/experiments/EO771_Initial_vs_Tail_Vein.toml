@@ -1,0 +1,33 @@
+# EO771.lmb Initial vs Tail Vein Experiment
+
+experiment_name = "EO771_Initial_vs_Tail_Vein"
+output_dir = "results/EO771_Initial_vs_Tail_Vein"
+
+barcodes_file = "assets/bcmap_EO771_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/10X/Laughney-MD-15488_2024_01_04",
+    "/local/data/Laughney-AO-17694_2024_12_12"
+]
+
+reference_names = [
+    "T0R1_S",
+    "T0R2_S"
+]
+
+alt_names = [
+    "Mouse_1_S",
+    "Mouse_2_S",
+    "Mouse_3_S",
+    "Mouse_4_S",
+    "Mouse_5_S",
+    "Mouse_6_S",
+    "Mouse_7_S",
+    "Mouse_8_S",
+    "Mouse_9_S",
+    "Mouse_10_S"
+]
+
+dt = 21
+paired = false

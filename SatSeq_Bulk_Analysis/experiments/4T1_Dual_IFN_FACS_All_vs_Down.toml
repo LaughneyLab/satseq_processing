@@ -1,0 +1,25 @@
+# 4T1 Dual IFN FACS All vs Down Experiment
+
+experiment_name = "4T1_Dual_IFN_FACS_All_vs_Down"
+output_dir = "results/4T1_Dual_IFN_FACS_All_vs_Down"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "/local/data/Laughney-AO-19670_2025_10_14"
+]
+
+reference_names = [
+    "Total_"
+]
+
+alt_names = [
+    "R1_Down",
+    "R2_Down",
+    "R3_Down"
+]
+
+dt = 1
+paired = false
+make_plots = false
