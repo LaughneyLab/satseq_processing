@@ -45,7 +45,7 @@ The code and barcode-level data required to generate the `FACS/` and `bulk_fitne
 
 `SatSeq_submission_paper_figures/scripts_results_plots/` contains analysis-specific folders that use the datasets above and produce the final figures used in the manuscript.
 
-| Folder | Description | Figures produced (e.g.) |
+| Folder | Description | Figures produced |
 |---|---|---|
 | `FACS_position_subs_modeling/` | Analysis and results for the hierarchical Bayesian mixed-effect model fit of FACS data, yielding per-position additive and interaction weights and amino acid substitution effect matrices. | Fig. 1f; Extended Data Figs. 2 and 4 (all panels) |
 | `fitness_position_subs_modeling/` | Analysis and results for the hierarchical Bayesian mixed-effect model fit of tumor fitness data, yielding per-position additive and interaction weights and amino acid substitution effect matrices. | Fig. 3a, b, d; Extended Data Figs. 6a-l, 7d-g |
@@ -57,7 +57,7 @@ The code and barcode-level data required to generate the `FACS/` and `bulk_fitne
 
 ### `P13_K337_further/` subfolders
 
-| Subfolder | Description | Figures produced (e.g.) |
+| Subfolder | Description | Figures produced |
 |---|---|---|
 | `RNAseq_bulk_time_points/` | Bulk RNA sequencing time-series data and analysis. | Fig. 4d; Extended Data Fig. 9 |
 | `mass_spec_data_analysis/` | Mass spectrometry data and analysis. | Fig. 5e; Extended Data Fig. 10a, b |
