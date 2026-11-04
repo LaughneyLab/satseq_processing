@@ -15,7 +15,7 @@ For mapping: Install [mmseqs2](https://github.com/soedinglab/MMseqs2)
 ## Project Structure
 
 ```
-SatSeq/
+SatSeq_Bulk_RNAseq_Analysis/
 ├── src/
 │   └── satseq_analysis.py    # Main pipeline script
 ├── experiments/              # TOML config files for each experiment

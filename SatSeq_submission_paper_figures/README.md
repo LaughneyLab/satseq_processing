@@ -2,36 +2,31 @@
 
 This repository contains the processed datasets, analysis code, and figure-generation scripts for the SatSeq manuscript. It is organized into two top-level parts:
 
-- `satseq_processing/` holds the processed datasets and the code that generates them from barcode-level data.
-- `SatSeq_submission_paper_figures/scripts_results_plots/` holds the analysis-specific folders that use these datasets to produce the final manuscript figures.
-
 ## Directory overview
 
 ```
-satseq_processing/
-├── SatSeq_Bulk_Analysis/                  # code and barcode-level data behind FACS and bulk_fitness results
-└── SatSeq_submission_paper_figures/
-    ├── datasets/
-    │   ├── FACS/
-    │   ├── bulk_fitness/
-    │   └── single_cell/
-    └── scripts_results_plots/
-        ├── FACS_position_subs_modeling/
-        ├── fitness_position_subs_modeling/
-        ├── mSTING_Stability_predictions/
-        ├── mutant_antigenicity/
-        ├── cGAMP_sc/
-        ├── tumor_sc_invivo/
-        └── P13_K337_further/
-            ├── RNAseq_bulk_time_points/
-            ├── mass_spec_data_analysis/
-            ├── mets_counts_survival/
-            └── sc_analysis/
+SatSeq_submission_paper_figures/
+├── datasets/
+│   ├── FACS/
+│   ├── bulk_fitness/
+│   └── single_cell/
+└── scripts_results_plots/
+    ├── FACS_position_subs_modeling/
+    ├── fitness_position_subs_modeling/
+    ├── mSTING_Stability_predictions/
+    ├── mutant_antigenicity/
+    ├── cGAMP_sc/
+    ├── tumor_sc_invivo/
+    └── P13_K337_further/
+        ├── RNAseq_bulk_time_points/
+        ├── mass_spec_data_analysis/
+        ├── mets_counts_survival/
+        └── sc_analysis/
 ```
 
 ## Datasets
 
-`satseq_processing/SatSeq_submission_paper_figures/datasets/` contains the common processed single-cell, FACS, and tumor fitness datasets, each in its own folder.
+`datasets/` contains the common processed single-cell, FACS, and tumor fitness datasets, each in its own folder.
 
 | Folder | Contents |
 |---|---|
@@ -43,7 +38,7 @@ The code and barcode-level data required to generate the `FACS/` and `bulk_fitne
 
 ## Analysis scripts, results, and plots
 
-`SatSeq_submission_paper_figures/scripts_results_plots/` contains analysis-specific folders that use the datasets above and produce the final figures used in the manuscript.
+`scripts_results_plots/` contains analysis-specific folders that use the datasets above and produce the final figures used in the manuscript.
 
 | Folder | Description | Figures produced |
 |---|---|---|
@@ -66,6 +61,6 @@ The code and barcode-level data required to generate the `FACS/` and `bulk_fitne
 
 ## Suggested workflow
 
-1. Start from the barcode-level data and code in `satseq_processing/SatSeq_Bulk_Analysis/` to regenerate the pooled FACS and bulk tumor fitness results, or use the processed outputs directly from `datasets/FACS/` and `datasets/bulk_fitness/`.
+1. Start from the barcode-level data and code in `../SatSeq_Bulk_RNASeq_Analysis/` to regenerate the pooled FACS and bulk tumor fitness results, or use the processed outputs directly from `datasets/FACS/` and `datasets/bulk_fitness/`.
 2. For single-cell results, run the MAST scripts in `datasets/single_cell/` on the `adata_*.h5ad` files to regenerate the differential expression tables.
 3. Run the analysis folders under `scripts_results_plots/` to reproduce the manuscript figures listed above.
