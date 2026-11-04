@@ -14,7 +14,7 @@ The directories in this repository each contain separate parts of the analysis:
 
 Code for creating a STINGVariant-Barcode map based on PacBio sequencing of variant STING. Then, using this map to assign variants to cells in the 10x scRNA-seq data.
 
-#### `SatSeq_Bulk_RNAseq_Analysis`
+#### `SatSeq_Bulk_DNAseq_Analysis`
 
 Code and barcode-level data behind FACS and bulk_fitness results
 
