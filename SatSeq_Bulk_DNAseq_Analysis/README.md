@@ -1,6 +1,11 @@
 # SatSeq Bulk Sequencing
 
-Saturation mutagenesis sequencing analysis pipeline.
+This directory contains the code for the mapping and the analysis pipeline for collecting variant barcode counts from sequencing data.
+
+The satseq_analysis.py script takes experimental information using configuration files. These specify the location of
+raw sequencing FASTQ files, barcode definitions, conditions 
+to compare, etc. The outputs include both raw variant counts and log2FC enrichment scores across conditions as well 
+as figures for representing fitness shifts.
 
 ## Requirements
 
