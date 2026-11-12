@@ -17,6 +17,13 @@ uv sync
 
 For mapping: Install [mmseqs2](https://github.com/soedinglab/MMseqs2)
 
+Install [Git LFS](https://git-lfs.com) before cloning. The `*_abundance_with_variant.csv` files (in `results/` and `demo/results/`) are stored with LFS. Without it, you get small placeholder files instead of the data. If you already cloned without LFS, run:
+
+```bash
+git lfs install
+git lfs pull
+```
+
 ## Project Structure
 
 ```
