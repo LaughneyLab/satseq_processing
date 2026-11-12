@@ -789,7 +789,7 @@ def make_fitness_heatmap(fitness_tests_df: pd.DataFrame,
         new_not_detected_mat = np.full((N_AAs, len(ordering)), True)
         new_wt_mask = np.full((N_AAs, len(ordering)), 0.0)
         new_significant_fitness_mat = np.full((N_AAs, len(ordering)), np.nan)
-        outline_mask = np.full((N_AAs, len(ordering)), "")
+        new_outline_mask = np.full((N_AAs, len(ordering)), "")
         new_positions = []
         for i, var in enumerate(ordering):
             try:
@@ -809,9 +809,10 @@ def make_fitness_heatmap(fitness_tests_df: pd.DataFrame,
             new_not_detected_mat[:, i] = not_detected_mat[:, position]
             new_wt_mask[:, i] = wt_mask[:, position]
             new_significant_fitness_mat[:, i] = significant_fitness_matrix[:, position]
-            outline_mask[:, i] = outline_mask[:, position]
+            new_outline_mask[:, i] = outline_mask[:, position]
 
         fitness_matrix = new_fitness_mat
+        outline_mask = new_outline_mask
         p_value_matrix = new_p_value_mat
         not_detected_mat = new_not_detected_mat
         wt_mask = new_wt_mask
