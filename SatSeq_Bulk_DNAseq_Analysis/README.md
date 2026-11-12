@@ -28,8 +28,19 @@ SatSeq_Bulk_DNAseq_Analysis/
 │   ├── bcmap_4T1_*.txt.gz
 │   ├── bcmap_EO771_*.txt.gz
 │   └── SSBC_Full.csv
+├── demo/                     # Small subsampled dataset for testing (see demo/README.md)
 └── results/                  # Output directory (created automatically)
 ```
+
+## Quick Demo
+
+To try the pipeline without the full sequencing data, run the included demo: 4T1 Initial vs Tail Vein Lung Metastasis, subsampled to 100k reads per sample. It takes about 2 minutes.
+
+```bash
+uv run python src/satseq_analysis.py demo/demo_4T1_Initial_vs_Tail_Vein.toml
+```
+
+See [demo/README.md](demo/README.md) for details and expected output.
 
 ## Usage
 

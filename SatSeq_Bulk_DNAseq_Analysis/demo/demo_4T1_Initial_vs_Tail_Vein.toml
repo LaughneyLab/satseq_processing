@@ -1,0 +1,30 @@
+# DEMO: 4T1 Initial vs Tail Vein Lung Metastasis (subsampled)
+# Reads: 100,000 random read pairs per sample (seed 42), lanes from both runs merged.
+# Source: /local/data/Laughney-MD-16882_2024_07_29 and Laughney-MD-16882_2024_07_24 (cbsulaughney)
+# Full experiment: experiments/4T1_Tail_Vein_vs_Lung_Met.toml
+# Note: with subsampled reads, many variants fall below the 8-count filter, so results are sparse/noisy.
+
+experiment_name = "demo_4T1_Initial_vs_Tail_Vein"
+output_dir = "demo/results"
+
+barcodes_file = "assets/bcmap_4T1_2025_02_27.txt.gz"
+twist_file = "assets/SSBC_Full.csv"
+
+data_dirs = [
+    "demo/fastq"
+]
+
+reference_names = [
+    "Initial_Tail_Vein_Injection_A",
+    "initial_Tail_Vein_Injection_B"
+]
+
+alt_names = [
+    "1_Tail_Vein_Injection_Lung_Metastasis",
+    "2_Tail_Vein_Injection_Lung_Metastasis",
+    "3_Tail_Vein_Injection_Lung_Metastasis"
+]
+
+dt = 13
+paired = false
+n_processes = 4
