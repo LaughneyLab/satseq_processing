@@ -1,61 +1,69 @@
-# SatSeq processing code
+# PacBio barcode maps and 10x variant assignment
 
-This repository contains analysis code supporting the manuscript:
+This directory contains the PacBio and 10x processing notebooks for the [SatSeq manuscript](../README.md). They build barcode-to-STING-variant maps and use those maps to label cells in single-cell RNA sequencing experiments. Historical `EO771` identifiers refer to EO771.lmb.
 
-**SatSeq: An *in vivo* genotype to phenotype map of the metastatic functions of STING**  
-Deyell, M. *et al.* (manuscript in preparation)
+## Workflow and required inputs
 
-The notebooks in this repository describe the long read processing and variant calling steps used in the SatSeq workflow.
+Run notebooks with **this directory as the working directory**, in the order below. Sample data sets are provided in the `data` subdirectory;
+full data sets are submitted to SRA/GEO linked to BioProject PRJNA1552726.
 
-## Notebooks
+| Order | Notebook/script | Inputs | Outputs/use |
+|---|---|---|---|
+| 1 | `01_pacbio_parsing.ipynb` | One PacBio HiFi BAM, `data/STING.fa`, and the feature reference | Creates read/variant tables and barcode-to-mutation maps for a single pacbio run; set `bamfile`, `outdir`, and sample parameters for each run |
+| 2 | `01b_combine_pacbio_maps.ipynb` | Per-run plasmid and cell-line barcode maps | Combined barcode-variant maps for 4T1 and EO771.lmb |
+| 3 | `bash/run_cellranger.sh` | Matching gene-expression/custom-feature FASTQs, transcriptome reference, and feature reference | Cell Ranger count matrices, molecule information, and BAM output |
+| 4 | `bash/bowtie_pileup.sh` | A capture's `outs/possorted_genome_bam.bam` and `outs/raw_feature_bc_matrix/barcodes.tsv.gz` | Barcode alignment BAM, consensus FASTA, and coverage table in that capture's `outs/` directory |
+| 5 | `02_10x_variant_calling.ipynb` | Cell Ranger outputs, per-cell barcode consensus files, and the matching combined PacBio map | QC-filtered single-cell data with variant annotations, saved as `adata_{label}.h5ad` |
 
-### `01_pacbio_parsing.ipynb`
 
-Processes PacBio sequencing data from mutant STING constructs containing a downstream SatSeq barcode. The notebook parses the sequencing reads and generates a barcode-to-mutation map linking SatSeq barcodes to STING variants.
 
-### `01b_combine_pacbio_maps.ipynb`
 
-Combines barcode-to-mutation maps generated from multiple PacBio sequencing runs from plasmid and 4T1/EO771.lmb cell lines. This notebook was used to generate the combined maps used in the study, but is not generally relevant for future satseq analysis.
+## Output annotations
 
-### `02_10x_variant_calling.ipynb`
+The `02_10x_variant_calling.ipynb` notebook creates the fields below. 
 
-Processes 10x single-cell sequencing data from the SatSeq experiments. The PacBio-derived barcode-to-mutation map is used to assign STING mutations to individual cells.
+| Field | Meaning in the supplied notebook |
+|---|---|
+| `obs['sample']` | Original capture identifier |
+| `obs['variant_cr']` | Assignment from Cell Ranger custom-feature counts/reads after the notebook's criteria and reference-label corrections |
+| `obs['consensus_barcode']` | Extracted combined barcode region from the per-cell consensus |
+| `obs['variant_pacbio']` | Assignment supported by the PacBio barcode map |
+| `obs['variant_substitution']` | Combined variant assignment before reduction to position-level labels |
+| `obs['variant_pos']` | Position-level representation created by this notebook |
+| `obs['haveVariant']` | Whether `variant` differs from the literal string `'None'` |
+| `obsm['variant_counts']` / `obsm['variant_reads']` | Custom-feature UMI/read matrices separated from gene-expression columns |
+| `layers['X_orig']` | raw UMI counts |
+| `layers['X']` | normalized UMI counts  (each cell sum to 10000) |
+| `layers['logX']` | log10-normalized UMI counts (log10(X+1) where X is normalized UMI) |
 
-## Repository structure
-
-```text
-.
-+-- 01_pacbio_parsing.ipynb
-+-- 01b_combine_pacbio_maps.ipynb
-+-- 02_10x_variant_calling.ipynb
-+-- bash/
-+-- python/
-+-- data/
-```
-
-- `bash/`  Bash scripts used by the analysis notebooks.
-- `python/`  Python helper functions used by the notebooks.
-- `data/`  Small supporting datasets required to run the notebooks.
 
 ## Software environment
 
-The notebooks report the versions of Python and key Python packages used for each analysis. The docker image with the environment can be downloaded with:
-```
-docker pull biohpc/scrna2024:0.3
-```
-
-and a jupyter notebook running on port 8888 can be started in this environment with a command like:
+The notebooks contain version-reporting cells, which document all libraries used. They were all executed in a docker environment, which can be downloaded and started with the following commands. Run from your project directory:
 ```bash
-CID=$(docker run -d biohpc/scrna2024 /workdir)
-docker exec -it $CID jupyter server list
+docker pull biohpc/scrna2024:0.3
+container=$((docker run --rm -it -d \
+  -v $(pwd):/data \
+  --workdir /data \
+  -p 127.0.0.1:8888:8888 \
+  --entrypoint jupyter \
+  biohpc/scrna2024:0.3 \
+  lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root))
+docker exec $container jupyter server list
 ```
+The last command outputs information about the jupyter server, including a long token string. You can open a local web browser, navigate to [localhost:8888](localhost:8888), and enter this token to access the notebook.
 
-Where `/workdir` is your working directory. The first command starts the container, the second command will print the link to the jupyter notebook, including the access token.
+Alignment of PacBio and 10x reads was done outside the docker environment, on Rocky 9.8 linux system, with:
 
+| Tool | Evidence in the supplied code / version to confirm |
+|---|---|
+| Cell Ranger | 8.0.1 |
+| Transcriptome | `refdata-gex-mm10-2020-A`|
+| Bowtie2 | Required for barcode alignment; version: 2.5.1 |
+| SAMtools | Required for BAM processing/consensus and compression; version 1.20 |
 
-## Citation
+## Small example and validation
 
-If you use this code, please cite the associated SatSeq manuscript. Citation information will be updated once the manuscript is available.
+The `data/examples` directory contains small example data sets suitable for testing the jupyter notebooks.
 
-
-    
+For citation, license status, and questions, see the [main README](../README.md).
