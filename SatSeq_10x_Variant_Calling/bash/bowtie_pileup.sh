@@ -1,4 +1,6 @@
 #!/bin/bash
+# Run with samtools 1.20 and bowtie2 2.5.1
+
 
 ## Get the feature barcode associated with each cell. Uses cellranger bam output and a barcode reference
 
