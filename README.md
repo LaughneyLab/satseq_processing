@@ -15,6 +15,7 @@ SatSeq links engineered STING variants to cellular phenotypes using sequencing b
 | Construct barcode-to-variant maps and assign variants to single cells | [PacBio and 10x README](SatSeq_10x_Variant_Calling/README.md) |
 | Regenerate bulk barcode counts and enrichment/fitness estimates | [Bulk DNA sequencing README](SatSeq_Bulk_DNAseq_Analysis/README.md) |
 | Explore additional bulk sequencing analyses | [Bulk analysis notebooks README](SatSeq_Bulk_DNAseq_Analysis/analysis/README.md) |
+| Explore/reproduce results from 10x lung mets analysis | [Lung mets notebook README](SatSeq_10x_lung_mets/README.md)|
 
 Each component has its own software requirements and working-directory assumptions. All code was tested/run on linux systems running Rocky 9.8.
 
@@ -23,13 +24,16 @@ Each component has its own software requirements and working-directory assumptio
 ```text
 PacBio HiFi BAMs -> per-run barcode-to-variant maps -> combined cell-line maps
                                                              |
-10x FASTQs -> Cell Ranger -> per-cell barcode consensus -------+
+10x SatSeq FASTQs -> Cell Ranger -> per-cell barcode consensus -------+
                                                              |
                                                  cell-to-variant assignments
                                                              |
-                                                 single-cell analyses/figures
+                                                 SatSeq single-cell analyses/figures
 
 Bulk DNA FASTQs -> barcode counts -> enrichment/fitness -> models/figures
+
+10x lung mets FastQs -> Cell Ranger -> single-cell analysis/figures
+
 ```
 
 The biological cell lines are **4T1** and **EO771.lmb**. Historical scripts and filenames also use `EO771` for EO771.lmb. 
