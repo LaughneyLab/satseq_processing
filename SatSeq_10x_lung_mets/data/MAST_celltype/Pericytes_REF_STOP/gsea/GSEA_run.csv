@@ -1,0 +1,4 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+WEISSMAN	4	0.86184514	1.4319683	0.050569948	0.06576187	0.0385	17	tags=50%, list=11%, signal=55%	pos
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction

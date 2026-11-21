@@ -1,0 +1,4 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_PI3K_AKT_MTOR_SIGNALING	3	-0.97734046	-1.615028	0.00039016778	0.038859352	0.05	5	tags=67%, list=3%, signal=67%	neg

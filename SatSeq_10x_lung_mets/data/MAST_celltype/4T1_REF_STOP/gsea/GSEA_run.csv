@@ -1,0 +1,6 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_INTERFERON_GAMMA_RESPONSE	171	0.7309761	2.1005754	0.0	0.0	0.0	3052	tags=57%, list=16%, signal=68%	pos
+HALLMARK_INTERFERON_ALPHA_RESPONSE	86	0.7854882	2.0781753	0.0	0.0	0.0	3028	tags=77%, list=16%, signal=91%	pos
+HALLMARK_TNFA_SIGNALING_VIA_NFKB	179	0.6092511	1.7634437	0.0	0.00069434074	0.0013	3066	tags=50%, list=16%, signal=59%	pos
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction

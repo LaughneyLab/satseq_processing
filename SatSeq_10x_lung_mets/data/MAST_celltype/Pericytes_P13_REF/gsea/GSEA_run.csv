@@ -1,0 +1,4 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_IL2_STAT5_SIGNALING	4	0.87504554	1.4914831	0.019720467	0.0076259775	0.0158	12	tags=50%, list=9%, signal=53%	pos
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction

@@ -1,0 +1,9 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_IL2_STAT5_SIGNALING	147	0.5266995	1.5765834	0.00043252597	0.07510383	0.0476	2456	tags=30%, list=16%, signal=35%	pos
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+WEISSMAN	85	-0.63635176	-1.5798912	0.0012667136	0.023891639	0.033	1731	tags=40%, list=11%, signal=45%	neg
+PERK_DOWN	18	-0.7876027	-1.5072839	0.018234491	0.043478012	0.117	1019	tags=56%, list=7%, signal=59%	neg
+ATF6_UP	11	-0.8481714	-1.4762557	0.020183817	0.044951014	0.1757	2008	tags=82%, list=13%, signal=94%	neg
+HALLMARK_MYC_TARGETS_V1	164	-0.53448284	-1.4310399	0.005279423	0.060526434	0.2945	2164	tags=30%, list=14%, signal=35%	neg
+IRE1A_UP	18	-0.6712815	-1.2939627	0.13709678	0.19925088	0.7679	1557	tags=44%, list=10%, signal=49%	neg

@@ -1,0 +1,5 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_MYC_TARGETS_V1	67	-0.75800043	-2.3831115	0.0	0.0	0.0	546	tags=60%, list=17%, signal=70%	neg
+PERK_DOWN	11	-0.71028644	-1.5082164	0.051878855	0.1570117	0.1658	728	tags=55%, list=22%, signal=70%	neg

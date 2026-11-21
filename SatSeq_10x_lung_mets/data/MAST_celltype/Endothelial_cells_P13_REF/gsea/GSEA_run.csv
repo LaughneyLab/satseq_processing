@@ -1,0 +1,8 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_TNFA_SIGNALING_VIA_NFKB	127	0.7277683	1.9226446	0.0	0.0	0.0	1010	tags=35%, list=9%, signal=39%	pos
+HALLMARK_TGF_BETA_SIGNALING	41	0.7423474	1.6520838	0.0024301338	0.0048635434	0.008	986	tags=37%, list=9%, signal=40%	pos
+PERK_UP	31	0.6827083	1.4424684	0.03488578	0.1209978	0.2547	1706	tags=42%, list=16%, signal=50%	pos
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_MYC_TARGETS_V1	123	-0.5553442	-1.5379317	0.0028818443	0.055149812	0.0801	2367	tags=47%, list=22%, signal=60%	neg
+HALLMARK_MYC_TARGETS_V2	35	-0.6301123	-1.4213872	0.04539106	0.11018795	0.2791	3375	tags=63%, list=31%, signal=91%	neg

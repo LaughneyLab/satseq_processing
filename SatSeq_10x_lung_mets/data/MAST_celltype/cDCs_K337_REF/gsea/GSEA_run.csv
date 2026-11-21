@@ -1,0 +1,9 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+WEISSMAN	61	-0.6720273	-1.8501723	0.00019700552	0.0006751685	0.0005	647	tags=33%, list=10%, signal=36%	neg
+HALLMARK_TNFA_SIGNALING_VIA_NFKB	103	-0.56744605	-1.6821676	0.0001977066	0.010404418	0.0168	826	tags=35%, list=13%, signal=40%	neg
+PERK_UP	20	-0.7331515	-1.6276375	0.007667474	0.016260505	0.0387	532	tags=30%, list=8%, signal=33%	neg
+PERK_DOWN	14	-0.7604539	-1.563165	0.019616026	0.029978557	0.0904	647	tags=50%, list=10%, signal=56%	neg
+ATF6_UP	7	-0.84726787	-1.4849471	0.034038056	0.062083855	0.2156	402	tags=43%, list=6%, signal=46%	neg
+REGULATOR_GENES	6	-0.8364267	-1.4202421	0.07046542	0.10052531	0.3797	744	tags=50%, list=12%, signal=57%	neg

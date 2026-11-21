@@ -1,0 +1,4 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+REGULATOR_GENES	1	-1.0	-1.326484	0.0	0.23121569	0.227	2	tags=100%, list=3%, signal=102%	neg

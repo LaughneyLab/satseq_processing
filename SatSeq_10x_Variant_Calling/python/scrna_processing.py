@@ -1,5 +1,6 @@
 import warnings
 
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -313,3 +314,196 @@ def filter_low_gene_abundance(molecules, is_invalid, residual_cutoff = 0.15, plo
         plot_xtick_vertical(ax=ax)
 
     return is_invalid
+
+
+# Function to optimize the number of PCs to retain based on the linear deviation method
+# A linear deviation threshold of 1e-5 is the default, as this has empirically worked well for most cases
+# Returns the optimal number of PCs to keep (sensitive to starting number of PCs)
+# The optimize_dev_thr function can be used to test the threshold used here.
+
+def optimize_pcs(adata, pca_name='pca', dev_thr=1e-5, save=True, fn='PCA_linear_deviation_optimization.png', output_dir=None):
+
+    plt.style.use('default')
+    
+    if pca_name not in adata.uns.keys():
+        exit(f'ERROR: {pca_name} not in adata.')
+    
+    x = range(len(adata.uns[pca_name]['variance_ratio']))
+    y = np.cumsum(adata.uns[pca_name]['variance_ratio'])
+    
+    deviation = []
+    slopes = []
+    
+    #dev_thr = 1e-5
+    thr_hit=False
+    
+    opt_n_pcs_linear_dev=0
+    
+    fig = plt.subplots(figsize=(6,6))
+    
+    for i in range(len(x)-2):
+        
+        tmp_slope = (y[i+1] - y[i]) / (x[i+1] - x[i])
+        tmp_int = y[i] - tmp_slope*x[i]
+        
+        plt.scatter(x, y, s=10, color='blue')
+        
+        y_line = [tmp_slope*x + tmp_int for x in x]
+        
+        tmp_dev = abs(y_line[i+2] - y[i+2])
+        
+        deviation.append(tmp_dev)
+        
+        slopes.append(tmp_slope)
+        
+        plt.plot(x, y_line, color='grey', linewidth=0.5)
+        
+        if (tmp_dev < dev_thr) and (thr_hit==False):
+            #print(f'Optimal nPCs = {i+1}')
+            #print(f'Optimal PCs index = {i}')
+            #print(f'Deviation = {tmp_dev}')
+            
+            opt_n_pcs_linear_dev = i
+            
+            plt.scatter(x[i], y[i], s=15, color='red')
+            plt.axvline(x[i], color='red', linestyle='--', linewidth=1)
+            
+            thr_hit=True
+        
+        plt.xlabel('PCs Ranked')
+        plt.ylabel('Cumulative Variance')
+        plt.title(f'Cumulative Explained Variance, i = {opt_n_pcs_linear_dev} | nPCs = {opt_n_pcs_linear_dev+1}')
+        
+        plt.ylim([y[0]*0.9, y[-1]*1.1])
+
+    if output_dir is not None:
+        if not os.path.exists(output_dir):
+            os.mkdir(output_dir)
+        fn = f'{output_dir}/{fn}'
+        plt.tight_layout()
+        print(fn)
+        plt.savefig(fn, dpi=400)
+
+    return opt_n_pcs_linear_dev+1
+        
+# Function to test different linear deviation thresholds for optimizing nPCs
+
+# We want to choose the deviation threshold that is the inflection point in the nPC -by- threshold plot. 
+# The number of PCs is stable for a wide range of thresholds (representing another valid choice) and nPCs shoots up after becoming slightly more stringent. 
+# We take the point right before the number of PCs begins to shoot up
+def optimize_dev_thr(adata, pca_name, save=False):
+    
+    plt.style.use('default')
+    if pca_name not in adata.uns.keys():
+        exit(f'ERROR: {pca_name} not in adata.')
+    
+    x = range(len(adata.uns[pca_name]['variance_ratio']))
+    y = np.cumsum(adata.uns[pca_name]['variance_ratio'])
+    
+    end_line_slope = (y[-1] - y[-2]) / (x[-1] - x[-2])
+    end_line_int = y[-1] - end_line_slope*x[-1]
+    
+    deviation = []
+    slopes = []
+    dev_thr_list = [0.001, 0.0009, 0.0008, 0.0007, 0.0006, 0.0005, 0.0004, 0.0003, 0.0002,
+                    0.0001, 0.00009, 0.00008, 0.00007, 0.00006, 0.00005, 0.00004, 0.00003, 0.00002, 
+                    0.00001, 0.000009, 0.000008, 0.000007, 0.000006, 0.000005, 0.000004, 0.000003, 0.000002,
+                    0.00000001, 0.000000001, 0.0000000001]
+    
+    thr_hit=False
+    
+    opt_n_pcs_linear_dev_list=[]
+    
+    for dev_thr in dev_thr_list:
+        
+        print(dev_thr)
+        thr_hit=False
+        
+        for i in range(len(x)-2):
+            
+            tmp_slope = (y[i+1] - y[i]) / (x[i+1] - x[i])
+            tmp_int = y[i] - tmp_slope*x[i]
+            
+            plt.scatter(x, y, s=10, color='blue')
+            
+            y_line = [tmp_slope*x + tmp_int for x in x]
+            
+            tmp_dev = abs(y_line[i+2] - y[i+2])
+            
+            deviation.append(tmp_dev)
+            
+            slopes.append(tmp_slope)
+            
+            plt.plot(x, y_line, color='grey', linewidth=0.5)
+            
+            if (tmp_dev < dev_thr) and (thr_hit==False):
+                print(f'Optimal nPCs = {i+1}')
+                print(f'Optimal PCs index = {i}')
+                print(f'Deviation = {tmp_dev}')
+                
+                opt_n_pcs_linear_dev = i
+                opt_n_pcs_linear_dev_list.append(i)
+                
+                plt.scatter(x[i], y[i], s=15, color='red')
+                plt.axvline(x[i], color='red', linestyle='--', linewidth=1)
+                
+                thr_hit=True
+        
+        if thr_hit==False:
+            print(f'Optimal nPCs = {len(x)}')
+            print(f'Optimal PCs index = {len(x)-1}')
+            print(f'Deviation = {tmp_dev}')
+            
+            opt_n_pcs_linear_dev = len(x)-1
+            opt_n_pcs_linear_dev_list.append(len(x)-1)
+            
+            plt.scatter(x[i], y[i], s=15, color='red')
+            plt.axvline(x[i], color='red', linestyle='--', linewidth=1)
+            
+            thr_hit=True
+            
+        plt.xlabel('PCs Ranked')
+        plt.ylabel('Cumulative Variance')
+        plt.title(f'Dev Thr = {dev_thr}, i = {opt_n_pcs_linear_dev} | nPCs = {opt_n_pcs_linear_dev+1}')
+        
+        plt.ylim([y[0]*0.9, y[-1]*1.1])
+
+        if save:
+            fn =  + f'{output_dir}/PCA_linear_deviation_optimization_dev_thr_{dev_thr}.png'
+            plt.tight_layout()
+            print(fn)
+            plt.savefig(fn, dpi=400)
+
+        plt.show()
+    
+    fig, ax = plt.subplots(figsize=(6,4))
+    
+    plt.plot(dev_thr_list, opt_n_pcs_linear_dev_list)
+    plt.scatter(dev_thr_list, opt_n_pcs_linear_dev_list, color='red', s=10)
+    
+    ax.invert_xaxis()
+    plt.ylabel('Optimal PCs')
+    plt.xlabel('Deviation Threshold')
+
+    if save:
+        fn = f'{output_dir}/PCA_linear_deviation_optimization_dev_thr_stability.png'
+        plt.tight_layout()
+        print(fn)
+        plt.savefig(fn, dpi=400)
+    
+    fig, ax = plt.subplots(figsize=(6,4))
+    
+    plt.plot(dev_thr_list[9:], opt_n_pcs_linear_dev_list[9:])
+    plt.scatter(dev_thr_list[9:], opt_n_pcs_linear_dev_list[9:], color='red', s=10)
+    
+    ax.invert_xaxis()
+    plt.ylabel('Optimal PCs')
+    plt.xlabel('Deviation Threshold')
+
+    if save:
+        fn = f'{output_dir}/PCA_linear_deviation_optimization_dev_thr_stability_2.png'
+        plt.tight_layout()
+        print(fn)
+        plt.savefig(fn, dpi=400)
+    return pd.DataFrame({'dev_thresh':dev_thr_list,
+                 'n_pcs':opt_n_pcs_linear_dev_list})

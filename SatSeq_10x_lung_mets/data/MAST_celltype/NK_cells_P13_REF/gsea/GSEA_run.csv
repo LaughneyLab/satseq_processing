@@ -1,0 +1,6 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_TNFA_SIGNALING_VIA_NFKB	74	-0.65297145	-1.8828255	0.0	0.0009705769	0.0006	580	tags=51%, list=19%, signal=62%	neg
+HALLMARK_PI3K_AKT_MTOR_SIGNALING	33	-0.5443733	-1.3720571	0.0718671	0.2405333	0.5992	367	tags=21%, list=12%, signal=24%	neg
+HALLMARK_INTERFERON_GAMMA_RESPONSE	68	-0.4928973	-1.415996	0.02486334	0.24787648	0.464	445	tags=26%, list=15%, signal=30%	neg

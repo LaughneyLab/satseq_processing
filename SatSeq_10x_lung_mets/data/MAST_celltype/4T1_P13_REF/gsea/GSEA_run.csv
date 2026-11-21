@@ -1,0 +1,8 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_MYC_TARGETS_V1	172	0.5992874	1.736645	0.0	0.0014337583	0.0014	4486	tags=62%, list=24%, signal=80%	pos
+HALLMARK_PROTEIN_SECRETION	83	0.58709896	1.5619731	0.0033664366	0.027102983	0.053	4080	tags=46%, list=22%, signal=58%	pos
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_INTERFERON_ALPHA_RESPONSE	82	-0.6922124	-1.9318855	0.0	3.3333334e-05	0.0001	2592	tags=45%, list=14%, signal=52%	neg
+HALLMARK_TNFA_SIGNALING_VIA_NFKB	168	-0.6467688	-1.9773613	0.0	6.666667e-05	0.0001	2887	tags=46%, list=15%, signal=54%	neg
+HALLMARK_INTERFERON_GAMMA_RESPONSE	168	-0.60772	-1.8543818	0.0	8.7037035e-05	0.0003	2971	tags=38%, list=16%, signal=44%	neg

@@ -1,0 +1,8 @@
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_INTERFERON_ALPHA_RESPONSE	5	0.9109589	1.8279291	0.00067340065	0.0028732507	0.0038	17	tags=100%, list=11%, signal=109%	pos
+
+name	size	es	nes	p	fdr_q	fwer_p	rank_at_max	leading_edge	direction
+HALLMARK_TNFA_SIGNALING_VIA_NFKB	7	-0.8420898	-1.7313607	0.0024390244	0.003498755	0.0034	11	tags=57%, list=7%, signal=59%	neg
+HALLMARK_INFLAMMATORY_RESPONSE	5	-0.73901886	-1.4096997	0.08092692	0.12625459	0.2805	11	tags=40%, list=7%, signal=42%	neg
+HALLMARK_MYC_TARGETS_V1	5	-0.76185644	-1.4392959	0.058050774	0.14188439	0.2182	27	tags=60%, list=18%, signal=71%	neg
+PERK_UP	1	-0.99333334	-1.3245358	0.01250252	0.19067672	0.4893	3	tags=100%, list=2%, signal=101%	neg
