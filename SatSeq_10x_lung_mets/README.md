@@ -22,16 +22,15 @@ The invocation of items `1a`, `1b`, `1c`, and `1d` above are described in the ma
 
 ## Output annotations
 
-The `lung_mets_analysis.ipynb` notebook creates the fields below. 
+The `lung_mets_analysis.ipynb` notebook writes the final data set to `adata_lung_mets_final.h5ad` which inclues the following fields:
 
 | Field | Meaning in the supplied notebook |
 |---|---|
 | `obs['cellAssign_0.8']` | Cell type assigned by cellAssign
 | `obs['Macro Cell Type 4']` | Final cell types after refining cellAssign annotations |
 | `obs['celltype_sub']` | Final cell type for each cell, including fine-grained cell types for T cell category |
-| `layers['X_orig']` | XXXX |
-| `layers['X']` | XXXX |
-| `layers['logX']` | XXXX |
+| `layers['X_orig']` | raw UMI counts |
+| `layers['logX']` | log10-normalized UMI counts |
 
 
 ## Software environment
